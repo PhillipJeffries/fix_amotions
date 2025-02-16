@@ -49,10 +49,13 @@ const Emotions = () => {
 
 
     const handleSubmit = (id: number) =>{
-        setCurrentValues([...currentValues, {name: name, value: value, message: message}])
-        dispatch(addNote({ name: name, value: value, message: message}))
-        setValues([...values, {name: name, value: value, message: message}])
-        toggleMessageVisability(id)
+        if (Object.values(message).every(m => m !=='')) {
+            setCurrentValues([...currentValues, {name: name, value: value, message: message}])
+            dispatch(addNote({ name: name, value: value, message: message}))
+            setValues([...values, {name: name, value: value, message: message}])
+            toggleMessageVisability(id)
+        }
+        
     };
 
     return (
