@@ -25,7 +25,7 @@ const Emotions = () => {
     const [currentValues, setCurrentValues] = useState<ItemType[]>([])
     const [name, setName] = useState('')
     const [value, setValue] = useState(0)
-    const [message, setMessage] = useState({fieldOne: '', fieldTwo: '', fieldThree: '', fieldFour: ''})
+    const [message, setMessage] = useState({situation: '', thoughts: '', emotions: '', behaviour: ''})
     const [showHistory, setShowHistory] = useState(false)
 
     const toggleMessageVisability = (id: number) => {
@@ -66,7 +66,7 @@ const Emotions = () => {
                     return (
                         <div className='emotion-item' key={id}>
                             <span className='emotion-title' style={{ color: color }}>{name}</span>
-                            <input onClick={(e)=>handleClick(e)(id)} name={name} type='range'></input>
+                            <input onTouchEnd={(e)=>handleClick(e)(id)} onMouseUp={(e)=>handleClick(e)(id)} name={name} type='range'></input>
                             {
                                 showMessage && 
                                 <MessageForm closeMessage={()=>toggleMessageVisability(id)} message={message} onChange={(e) => {setMessage({...message, [e.currentTarget.id] : e.currentTarget.value})}} sendMessage={() => handleSubmit(id)} />

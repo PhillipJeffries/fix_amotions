@@ -14,10 +14,10 @@ const ResultsList = ({values}:{values: ItemType[]}) => {
                             <span>{name}</span>
                             <span>{value.toString()}</span>
                             <span>{time}</span>
-                            <span>{message.fieldOne}</span>
-                            <span>{message.fieldTwo}</span>
-                            <span>{message.fieldThree}</span>
-                            <span>{message.fieldFour}</span>
+                            <span>{message.situation}</span>
+                            <span>{message.emotions}</span>
+                            <span>{message.behaviour}</span>
+                            <span>{message.thoughts}</span>
                         </div>
                     )
                 })

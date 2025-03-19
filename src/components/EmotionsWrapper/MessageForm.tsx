@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Message } from "../../features/data/dataSlice";
 
 type MessageFormProps = {
     // showMessage: boolean;
-    message: {fieldOne: string, fieldTwo: string, fieldThree: string, fieldFour: string};
+    message: Message;
     onChange: (event: any) => void;
     sendMessage: (event: any) => void;
     closeMessage: () => void;
@@ -18,7 +19,7 @@ const MessageForm = ({ closeMessage, message ,onChange, sendMessage }: MessageFo
                 {Object.keys(message).map((k)=> {
                     return (
                         <>
-                            <h5>{k}</h5>
+                            <span>{k}</span>
                             <textarea key={k} id={k} onChange={onChange}></textarea>
                         </>
                     )

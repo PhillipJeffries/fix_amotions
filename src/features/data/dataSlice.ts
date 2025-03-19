@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
+export type Message = {situation: string, thoughts: string, emotions: string, behaviour: string}
+
 export interface ItemType {
   id?: number
   name: string
   value: number
   time?: number
-  message: {fieldOne: string, fieldTwo: string, fieldThree: string, fieldFour: string}
+  message: Message
   messageState?: boolean
 }
 
