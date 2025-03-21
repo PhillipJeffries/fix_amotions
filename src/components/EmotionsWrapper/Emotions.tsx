@@ -32,6 +32,7 @@ const Emotions = () => {
         const index = emotions.findIndex((emo) => emo.id === id)
         console.log(id, index)
         emotions[index].showMessage = !emotions[index].showMessage
+        // emotions.forEach(item => item.showMessage = false);
         setEmotions(emotions)
     }
 
@@ -59,7 +60,7 @@ const Emotions = () => {
     };
 
     return (
-        <form className='Emotions' action=''>
+        <div className='Emotions'>
             <div className='emotions-wrapper container'>
                 <h1>What are you feeling now?</h1>
                 {emotions.map(({ id, name, color, showMessage }) => {
@@ -83,7 +84,7 @@ const Emotions = () => {
                     <HistoryList hideHistory={toggleHistory} values={values} />
                 </div>
             }
-        </form>)
+        </div>)
 };
 
 export default Emotions
